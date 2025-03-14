@@ -37,7 +37,7 @@ services:
     ports:
       - 7676:7676
     environment:
-      - VERIFIER_CONFIG_FILE=verifier-config-public.json
+      - VERIFIER_CONFIG_FILE=verifier-config-test.json
     healthcheck:
       test:
           - CMD

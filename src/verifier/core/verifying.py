@@ -44,6 +44,13 @@ def setup(app, hby, vdb, reger, local=False):
         vlei = bytes(json_oobi_gleif.get("vlei"), "utf8")
         oobi = json_oobi_gleif.get("oobi")
         add_root_of_trust(vlei, hby, tvy, vry, vdb, aid, oobi)
+    
+    with open("./src/root_of_trust_oobis/local_root_of_trust.json", "rb") as f:
+        json_oobi_gleif = json.loads(f.read())
+        aid = json_oobi_gleif.get("aid")
+        vlei = bytes(json_oobi_gleif.get("vlei"), "utf8")
+        oobi = json_oobi_gleif.get("oobi")
+        add_root_of_trust(vlei, hby, tvy, vry, vdb, aid, oobi)
 
 
 def loadEnds(app, hby, vdb, tvy, vry):
